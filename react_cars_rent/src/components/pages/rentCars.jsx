@@ -7,9 +7,8 @@ import {useAuth} from "../context/authContext"
 function RentaCars ()  {
     const navigate = useNavigate();
     const {usuario, logout, loading } = useAuth();
-    const [error, setError] = useState();
 
-    const [usuarioIn, setUsuarioIn] = useState ();
+    console.log( usuario)
     
     const  handleLogout = async (e) => {
         e.preventDefault();
@@ -29,7 +28,8 @@ function RentaCars ()  {
             <Container estilo={"Renta"}>
                 {usuario != null  && 
                     <> 
-                        <p>Welcome {usuario.email}</p>  
+                        <p>Welcome { usuario.displayName ||usuario.email }</p>  
+                     
                         <button onClick={handleLogout}> Log out </button> 
                     </>
                 }

@@ -8,7 +8,7 @@ function Login () {
     const navigate = useNavigate();
     const [errorEmail, setErrorEmail] = useState()
     const [errorPassW, setErrorPassW] = useState()
-    const {login} = useAuth();
+    const {login, loginWithGoogle} = useAuth();
     const {register, formState: {errors}, handleSubmit} = useForm();
 
     async function onSubmit (data, e) {
@@ -27,8 +27,14 @@ function Login () {
                 }
             }
       };
-     const  handleGoogleSignin = (e) => {
+     const handleGoogleLogin = async (e) => {
          e.preventDefault()
+         try {
+            await loginWithGoogle()
+            navigate("/renta")
+         } catch (error) {
+             console.log(error.message)
+         }
 
      }
     return (
@@ -74,7 +80,7 @@ function Login () {
                     <Link to="/signup" > Signup </Link>
                 </p>
                 <p> or Login using Google</p>
-                <button onClick={handleGoogleSignin}>GOOGLE</button>
+                <button onClick={handleGoogleLogin}>GOOGLE</button>
 
                 
             </FormBody>

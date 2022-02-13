@@ -41,9 +41,9 @@ export function AuthProvider ({ children }) {
         console.log("El usuario ha salido " + usuario.email)
     }
 
-    const loginWithGoogle = () => {
-       const googleProvider = new GoogleAuthProvider()
-       signInWithPopup(auth, googleProvider)
+    const loginWithGoogle = async () => {
+        const googleProvider = new GoogleAuthProvider()
+        await signInWithPopup(auth, googleProvider)
     }
 
     useEffect (() => {
