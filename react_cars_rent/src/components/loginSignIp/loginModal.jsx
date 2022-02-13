@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import "./modal.css"
 import { Overlay, ModalContent, CloseModal, InputLogin, FormBody} from "./loginModalStyles";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 const ModalLogin =  ({showModal, setShowModal, setActive}) => {
     const navigate = useNavigate();
+    const [emailData, setEmailData] = useState(" ");
+    const [passwordData, setPasswordData] = useState (" ");
      /* Para detener el scroll del fondo */    
     if(showModal) {
         document.body.classList.add('active-modal')
@@ -16,8 +18,8 @@ const ModalLogin =  ({showModal, setShowModal, setActive}) => {
     
     const handleClick = (e) => {
         e.preventDefault();
-        /* authenticate() */
         navigate ("/rentaCars"); 
+        console.log(emailData, passwordData)
         
     };
 
@@ -37,16 +39,16 @@ const ModalLogin =  ({showModal, setShowModal, setActive}) => {
                                 name="email"
                                 id="email"
                                 placeholder="Enter your email"
-                                /* onChange={e => setDetallesLogin({...detallesLogin, email: e.target.value})} 
-                                value={detallesLogin.email} */
+                                onChange={(e) => setEmailData(e.target.value)} 
+                                value={emailData.email}
                             /> 
                             <InputLogin 
                                 type="password"  
                                 name= "password"
                                 id="password"
                                 placeholder="Enter your password"
-                                /*  onChange={e => setDetallesLogin({...detallesLogin, password: e.target.value})} 
-                                value={detallesLogin.password} */
+                                onChange={(e) => setPasswordData(e.target.value)} 
+                                value={passwordData.password} 
                             />
                             <p>forgot your password?</p>
                             <div>

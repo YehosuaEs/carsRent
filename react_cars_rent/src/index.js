@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FontStyles from "./fonts/fontStyles";
+import { AuthProvider } from "./components/context/authContext"
 
 ReactDOM.render(
   <React.StrictMode>
     <FontStyles />
-    <App />
+    <AuthProvider> 
+      <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

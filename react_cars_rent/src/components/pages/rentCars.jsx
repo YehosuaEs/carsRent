@@ -1,25 +1,42 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Container } from "./aPagesStyles";
 import {useNavigate} from "react-router-dom"
-
+import {useAuth} from "../context/authContext"
 
 
 function RentaCars ()  {
     const navigate = useNavigate();
+    const {usuario, logout, loading } = useAuth();
+    const [error, setError] = useState();
 
-    const handleClick = (e) => {
+    const [usuarioIn, setUsuarioIn] = useState ();
+    
+    const  handleLogout = async (e) => {
         e.preventDefault();
-        navigate ("/")
-    }
+        try {
+            await logout();   
+            navigate ("/");
+            console.log("el usuario ha salido " + usuario.email)
+        } catch (error) {
+            console.log("Failed Logout" + error.message)
+
+        }
+    }  
+       if (loading) { <h1>LOADING...</h1>}
 
     return (
         <Fragment>
             <Container estilo={"Renta"}>
+                {usuario != null  && 
+                    <> 
+                        <p>Welcome {usuario.email}</p>  
+                        <button onClick={handleLogout}> Log out </button> 
+                    </>
+                }
 
-                     <button onClick={handleClick}> Log out </button> 
-
-                    Rent Cars           
-                    <h2>Contacto del RentaCArs</h2>     
+                <h1>Rent Cars  </h1>          
+                <h2>Contacto del RentaCArs</h2>   
+                    
             </Container>
            
 
