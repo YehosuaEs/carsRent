@@ -57,3 +57,8 @@ export const Inputs = styledComponents.input`
     `}
 
 `;
+
+export const Error = styledComponents.p`
+    color: red;
+    margin-block:0; 
+`

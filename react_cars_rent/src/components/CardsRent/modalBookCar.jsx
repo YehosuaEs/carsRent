@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Overlay, ModalContent, CloseModal, Inputs, FormBody} from "./modalBookCarStyles";
+import { Overlay, ModalContent, CloseModal, Inputs, FormBody, Error} from "./modalBookCarStyles";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -19,10 +19,8 @@ const ModalBooking =  ({showModal, setShowModal}) => {
     const defaultValue = new Date(date).toISOString().split('T')[0] // yyyy-mm-dd
     /* Handle del el submit del formulario de fecha y hora de la reserva */
     const {register, formState: {errors}, handleSubmit} = useForm();
-    const handleClick = (e) => {
-        e.preventDefault();
-        alert("Youa have made a reservation!"+ defaultValue)
-
+    const onSubmit = (data) => {
+        //alert("Youa have made a reservation!"+ defaultValue)
     };
 
     return (
@@ -32,16 +30,23 @@ const ModalBooking =  ({showModal, setShowModal}) => {
                 <>
                     <Overlay onClick={() => setShowModal (prev => !prev)} ></Overlay>   
                     <ModalContent>
-                        <FormBody onSubmit={handleClick}>
+                        <FormBody onSubmit={handleSubmit(onSubmit)}>
                             
                             <h2> BOOK YOUR CAR </h2>
+                            
                             <label htmlFor={"date"} >Choose a date</label>
-                            <Inputs type={"date"} id={"date"} min={defaultValue} defaultValue={defaultValue}></Inputs>
+                            {errors.date && <Error >{errors.date.message}</Error>}
+                            <Inputs type={"date"} id={"date"} min={defaultValue}  placeholder={defaultValue} 
+                                {...register('date', {required: 'Please select a date'})} 
+                            />
 
-                            <label htmlFor={"hour"} >Choose an hour to get it!</label>
-                            <Inputs type={"time"} id={"time"}></Inputs>
+                            <label htmlFor={"time"} >Choose an hour to get it!</label>
+                            {errors.time && <Error >{errors.time.message}</Error>}
+                            <Inputs type={"time"} id={"time"} 
+                                {...register('time', {required: 'Please select an hour'})}
+                            /> 
 
-                            <Inputs type="submit" value="Booking" estilo={"BtnSignIn"} />
+                            <Inputs type="submit" /* value="Booking" */ estilo={"BtnSignIn"} />
 
                             <CloseModal  onClick={() => setShowModal (prev => !prev)}>
                                 close

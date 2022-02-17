@@ -65,7 +65,6 @@ function Login () {
                     {...register('password', { 
                         required: true, minLength: {
                             value: 6,
-                          
                         }, 
                     })}
                 />
