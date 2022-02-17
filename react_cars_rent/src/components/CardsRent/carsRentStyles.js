@@ -89,11 +89,13 @@ export const Texto = styledComponents.p`
 `;
 
 export const CardDescription = styledComponents.div`
-    border: 3px solid #252626;
+    border: 0px solid #252626;
     background-color: #f5f7fa;
     resize: initial;
+    width: 95%;
     display:  ${props => props.display}
 `;
+
 
 export const Botones = styledComponents.button` 
     cursor: pointer; 

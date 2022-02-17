@@ -1,9 +1,10 @@
 import { Fragment, useState, useEffect} from "react";
 import data from "../../dataCars/data"
-import {Container, Card, CardDescription, Botones, ImgCar, Texto, CardSectionA, CardSectionB} from "./carsRentStyles"
+import {Container, Card, Botones, ImgCar, Texto, CardSectionA, CardSectionB} from "./carsRentStyles"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/firebaseconfig";
 import ModalBooking from "./modalBookCar";
+import BotonDescription from "./botonDescription";
 
 
 function CarCard () {
@@ -22,10 +23,14 @@ function CarCard () {
 
     /* -----SECCION DEL PARA GESTIONAR EL MODAL -------- */
     const [showModal, setShowModal] = useState(false);
-    const handleOpenModal = () => {
-         setShowModal(prev => !prev)
-         setShowModal(!showModal)
+    const [carInfo, setCarInfo] = useState({})
+
+    const  handleOpenModal = () => {
+        setShowModal(prev => !prev)
+        setShowModal(!showModal)
+        console.log(carInfo)
      }; 
+
     return (
         <Fragment >
             <Container>
@@ -35,8 +40,8 @@ function CarCard () {
                             <CardSectionA  >
                                 <CardSectionA estilo={"CardSectionA_1"}>
                                     <ImgCar  /* src={items.img} */></ImgCar>
-                                    <Botones onClick={() => handleOpenModal()} estilo={"BotonBook"}>Book vehicle</Botones>
-                                    { showModal ? <ModalBooking showModal={showModal} setShowModal={setShowModal} /> : null}
+                                    <Botones  onClick={() =>{ handleOpenModal()}} estilo={"BotonBook"}  >Book vehicle</Botones>
+                                    { showModal ? <ModalBooking cars={setCarInfo} showModal={showModal} setShowModal={setShowModal} /> : null}
                                 </CardSectionA>
                                 
                                 <CardSectionA estilo={"CardSectionA_2"}>
@@ -48,9 +53,15 @@ function CarCard () {
                                     </CardSectionA>
                                 </CardSectionA> 
                             </CardSectionA>
-                            {/*  <CardSectionB>
-                                <Boton /> 
-                            </CardSectionB> */}
+                              <CardSectionB>
+                                <BotonDescription 
+                                    asientos={cars.seats}
+                                    pasajeros={cars.passengers}
+                                    puertas={cars.doors}
+                                    categoria ={cars.category}
+                                    transmision={cars.transmission} 
+                                /> 
+                            </CardSectionB> 
                         </Card>
                     )})
                 }
@@ -60,20 +71,12 @@ function CarCard () {
 };
 export default CarCard;
 
-/* Llevarmelo a otro componente para tener mas espacio limpio */
-   /*  const [pressDescripcion, setPressDescripcion] = useState(false)
-    const handleclickDetails = (e) => {
-        e.preventDefault();
-        setPressDescripcion(!pressDescripcion)
-    };
-
-     const Boton = () => {
-        return (
-            <Fragment>
-                <Botones estilo={"BotonDetails"}type="button" onClick={handleclickDetails}>Availability and details </Botones>
-                <CardDescription display={pressDescripcion ? 'block' : 'none'}>
-                    <h1>DESCRIPCION</h1>
-                </CardDescription> 
-            </Fragment>
-        )
-    };  */
+/* props.asientos}</li>
+                    <li>{props.pasajeros}</li>
+                    <li>{props.combustible}</li>
+                </ol>
+                <ol>
+                    <li>{props.puertas}</li>
+                    <li>{props.categoria}</li>
+                    <li>{props.trasnmision}</li>
+                </ol> */
