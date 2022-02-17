@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 // este servira para crea una base datos como el array de coches
-export const baseDatos = getFirestore(app);
+export const db = getFirestore(app);
 // ests la const que sirvira para autenticar usuarios
 export const auth = getAuth(app);
 

@@ -33,12 +33,11 @@ export function AuthProvider ({ children }) {
     }
     const login = async (email, password) => {
         const credentialSignIn = await signInWithEmailAndPassword  (auth, email, password);
-        console.log(email)
+        alert("Bienvenido" + email)
     }
 
     const logout = async () => {
         await signOut(auth)
-        console.log("El usuario ha salido " + usuario.email)
     }
 
     const loginWithGoogle = async () => {

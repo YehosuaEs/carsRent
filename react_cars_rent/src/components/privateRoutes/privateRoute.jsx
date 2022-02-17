@@ -14,18 +14,3 @@ function PrivateRoute({ children }) {
 };
 export default PrivateRoute;
 
-
-/* function PrivateRoute({ component: Component, ...rest }) {
-    const {usuario, loading} = useAuth() 
-    
-    return (    
-        <Route
-            {...rest }
-            render={props => {
-              usuario ? <Component {...props} /> : <Navigate to="/" />
-            }}
-        /> 
-    )
-};
-
-export default PrivateRoute; */

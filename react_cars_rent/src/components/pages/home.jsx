@@ -8,6 +8,7 @@ import {useNavigate} from "react-router-dom"
 function Home () {
     //const [showModal, setShowModal] = useState(false);
     //const [active, setActive] = useState("login"); 
+    
     //const authenticaContext = useContext(authContext);
     //const authContext = useAuth()
     //const {user} = useAuth()

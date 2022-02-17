@@ -1,0 +1,79 @@
+{    
+    "data": [  
+       { 
+            "count": 5,
+            "results": [
+                {
+                    "id": "1",
+                    "model": "Spark",
+                    "brand": "Chevrolet",
+                    "persons": "5",
+                    "seats":"5",
+                    "doors": "5",
+                    "category":"Family",
+                    "gps": "GPS",
+                    "air_conditioning": "Air Condition",
+                    "limit_speed": "Speed limit",
+                    "suitcases": "1",
+                    "electric": "no"
+                },
+                {
+                    "id": "2",
+                    "model": "Spark",
+                    "brand": "Chevrolet",
+                    "persons": "5",
+                    "seats":"5",
+                    "doors": "5",
+                    "category":"Family",
+                    "gps": "GPS",
+                    "air_conditioning": "Air Condition",
+                    "limit_speed": "Speed limit",
+                    "suitcases": "1",
+                    "electric": "no"
+                },
+                {
+                    "id": "3",
+                    "model": "Spark",
+                    "brand": "Chevrolet",
+                    "persons": "5",
+                    "seats":"5",
+                    "doors": "5",
+                    "category":"Family",
+                    "gps": "GPS",
+                    "air_conditioning": "Air Condition",
+                    "limit_speed": "Speed limit",
+                    "suitcases": "1",
+                    "electric": "no"
+                },
+                {
+                    "id": "4",
+                    "model": "Spark",
+                    "brand": "Chevrolet",
+                    "persons": "5",
+                    "seats":"5",
+                    "doors": "5",
+                    "category":"Family",
+                    "gps": "GPS",
+                    "air_conditioning": "Air Condition",
+                    "limit_speed": "Speed limit",
+                    "suitcases": "1",
+                    "electric": "no"
+                },
+                {
+                    "id": "5",
+                    "model": "Spark",
+                    "brand": "Chevrolet",
+                    "persons": "5",
+                    "seats":"5",
+                    "doors": "5",
+                    "category":"Family",
+                    "gps": "GPS",
+                    "air_conditioning": "Air Condition",
+                    "limit_speed": "Speed limit",
+                    "suitcases": "1",
+                    "electric": "no"
+                }
+            ]
+        }
+    ]
+}

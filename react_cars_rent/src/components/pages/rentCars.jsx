@@ -1,21 +1,20 @@
 import { Fragment, useState } from "react";
 import { Container } from "./aPagesStyles";
-import {useNavigate} from "react-router-dom"
-import {useAuth} from "../context/authContext"
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../context/authContext";
+import CarCard from "../CardsRent/cardsRent";
 
 
 function RentaCars ()  {
     const navigate = useNavigate();
     const {usuario, logout, loading } = useAuth();
-
-    console.log( usuario)
     
     const  handleLogout = async (e) => {
         e.preventDefault();
         try {
             await logout();   
             navigate ("/");
-            console.log("el usuario ha salido " + usuario.email)
+            alert("el usuario ha salido " + usuario.email)
         } catch (error) {
             console.log("Failed Logout" + error.message)
 
@@ -35,11 +34,11 @@ function RentaCars ()  {
                 }
 
                 <h1>Rent Cars  </h1>          
-                <h2>Contacto del RentaCArs</h2>   
+                <CarCard />
+
+               
                     
             </Container>
-           
-
         </Fragment>
     )
 };

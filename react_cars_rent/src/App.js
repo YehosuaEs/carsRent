@@ -12,7 +12,6 @@ import PrivateRoute from './components/privateRoutes/privateRoute';
 import {useAuth} from "./components/context/authContext"
 
 
-
 function App() {
 /* const {usuario} = useAuth();
 
@@ -23,24 +22,26 @@ function App() {
 
   return (
     <Fragment>
-      <Router>
-          <NavBar />
-          <Routes>
 
-            <Route path="/" element={  <Home /> } />
+        <Router>
+            <NavBar />
+            <Routes>
 
-            <Route  path="/login" element={<Login/> } />
+              <Route path="/" element={  <Home /> } />
+
+              <Route  path="/login" element={<Login/> } />
+              
+              <Route  path="/signup" element={<Signup/> } />
             
-            <Route  path="/signup" element={<Signup/> } />
-           
-            <Route  path="/*" element={<NotFound />}></Route>
+              <Route  path="/*" element={<NotFound />}></Route>
 
-            <Route path="/renta" element={ <PrivateRoute> <RentaCars /> </PrivateRoute>} />
-            
-            <Route path="/contact" element={  <Contact /> } />
+              <Route path="/renta" element={ <PrivateRoute> <RentaCars /> </PrivateRoute>} />
+              
+              <Route path="/contact" element={  <Contact /> } />
 
-          </Routes>
-      </Router>
+            </Routes>
+        </Router>
+
     </Fragment>
   );
 }

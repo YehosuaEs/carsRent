@@ -8,10 +8,14 @@ export const Container = styledComponents.div`
     font-size: 28px;
     height: 500px;
     
-    ${props => props.estilo === 'Renta' && `
-    background-color: #35c9d5;
-    height: 500px;
+
     
+    ${props => props.estilo === 'Renta' && `
+    background-color: #ffff;
+    height: auto;
+    max-width: 100vw;;
+    border: solid 1px black;    
+
     `}
 
     ${props => props.estilo === 'Boton' && `

@@ -16,7 +16,6 @@ function Login () {
             try  {
                 await login(data.email, data.password)
                 navigate("/renta")
-                console.log(data)
             } catch (error) {
                 if (error.code === "auth/user-not-found") {
                     setErrorEmail("Email not found, please go to signup section to start!")
@@ -26,8 +25,9 @@ function Login () {
                     setErrorPassW("Incorrect Password, please try again!")
                 }
             }
-      };
-     const handleGoogleLogin = async (e) => {
+    };
+
+    const handleGoogleLogin = async (e) => {
          e.preventDefault()
          try {
             await loginWithGoogle()
@@ -36,7 +36,7 @@ function Login () {
              console.log(error.message)
          }
 
-     }
+    }
     return (
         <Fragment>
             <FormBody onSubmit={handleSubmit(onSubmit)}>

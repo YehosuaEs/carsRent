@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import FontStyles from "./fonts/fontStyles";
 import { AuthProvider } from "./components/context/authContext"
 
+
 ReactDOM.render(
   <React.StrictMode>
     <FontStyles />
-    <AuthProvider> 
-      <App />
-    </AuthProvider>
+     
+      <AuthProvider> 
+        <App />
+      </AuthProvider>
+      
   </React.StrictMode>,
   document.getElementById('root')
 );
