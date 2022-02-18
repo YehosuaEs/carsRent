@@ -1,7 +1,11 @@
 import {Fragment, useState} from "react";
 import  {Botones, CardDescription} from "./carsRentStyles"
-import { DescripUl, DescripLi, FeatAndGuide} from "./botonDescriptionStyle"
-
+import { DescripUl, DescripLi, FeatAndGuide, Icono, LineaDiv} from "./botonDescriptionStyle"
+import seat from "../../img/iconosCars/seat.png"
+import passengers from "../../img/iconosCars/passengers.png"
+import door from "../../img/iconosCars/door.png"
+import family from "../../img/iconosCars/family.png"
+import manual from "../../img/iconosCars/manual.png"
 
 function BotonDescription(props) {
 
@@ -16,21 +20,29 @@ function BotonDescription(props) {
         <Fragment>
             <Botones estilo={"BotonDetails"} type="button" onClick={handleclickDetails}>Details </Botones>
             <CardDescription display={pressDescripcion ? 'block' : 'none'}>
-                
+                <FeatAndGuide>Characteristics</FeatAndGuide>
+                <LineaDiv/>
                 <DescripUl>
-                    <DescripLi>Seats:  {props.asientos}</DescripLi>
-                    <DescripLi>Passengers: {props.pasajeros}</DescripLi>
-                    <DescripLi>Doors: {props.puertas}</DescripLi>
+                    <Icono src={seat} />
+                    <DescripLi> {props.asientos}</DescripLi>
+                    <Icono src={passengers} />
+                    <DescripLi>{props.pasajeros}</DescripLi>
+                    <Icono src={door} />
+                    <DescripLi>{props.puertas}</DescripLi>
                 </DescripUl>
 
                 <DescripUl>
-                    <DescripLi estilo={'descriptionDown'}>Category: {props.categoria}</DescripLi>
-                    <DescripLi estilo={'descriptionDown'}>Transmission: {props.transmision}</DescripLi>
+                    <Icono src={family} />
+                    <DescripLi estilo={'descriptionDown'}> {props.categoria}</DescripLi>
+                    <Icono src={manual} />
+                    <DescripLi estilo={'descriptionDown'}> {props.transmision}</DescripLi>
+                    <DescripLi estilo={'descriptionDown'}> </DescripLi>
                 </DescripUl> 
                 <FeatAndGuide>Features</FeatAndGuide>
-                <hr />
+                <LineaDiv/>
                 <FeatAndGuide>Guidelines</FeatAndGuide>
-                <hr />
+                <LineaDiv />
+                <br />
 
             </CardDescription> 
         </Fragment>

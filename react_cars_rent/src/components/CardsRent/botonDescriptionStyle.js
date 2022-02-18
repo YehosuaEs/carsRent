@@ -3,18 +3,18 @@ import styledComponents from "styled-components";
 export const DescripUl = styledComponents.div`
     display: flex;
     flex-flow: row-wrap;
-
+    padding-left: 20px;
 
 
 `;
 
 export const DescripLi= styledComponents.div`
-    margin: 20px 0 0 10px;
-    width: 200px;
+    margin: 15px 0 0 5px;
+    width: 100%;
     font-size: 16px;
 
     ${props => props.estilo == 'descriptionDown' && `
-     margin-top: 10px;
+     margin-top: 15px;
     ` }
 `;
 
@@ -24,9 +24,19 @@ export const FeatAndGuide = styledComponents.p`
     font-size: 18px;
 `;
 
-export const lineaDiv = styledComponents.hr`
-    max-width: 100%;
-    margin 0 10px;
+export const LineaDiv = styledComponents.hr`
+widht: auto;
+margin 0 15px; 
+height:1px;
+background-color: black;
+opacity: .4;
 
 `;
 
+
+export const Icono = styledComponents.img`
+    width:30px;
+    height:30px;
+    border: 2px solid none;
+    margin: 10px 0 0 0;
+`;
