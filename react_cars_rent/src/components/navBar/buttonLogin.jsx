@@ -7,7 +7,7 @@ function BtnLogin () {
     return(
         <Fragment>
             <Link to="/login ">
-                <button className="btn">LoginBtn</button> 
+                <button className="btnLogin">Login</button> 
             </Link>
         </Fragment>
     )

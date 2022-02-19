@@ -46,10 +46,9 @@ function NavBarHome () {
                             LOGIN
                         </Link>
                     </li>
-                  
                 </ul>
-                    <BtnSignUp />
                     <BtnLogin />              
+                    <BtnSignUp />
             </nav>
         </Fragment>
     )

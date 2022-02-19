@@ -1,6 +1,6 @@
  .navbar {
-    background: linear-gradient(90deg, rgb(7, 7, 7) 0%, rgb(219, 222, 212) 100%);
-    height: 80px;
+    background: #FF8269;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,18 +8,19 @@
   }
   
   .navBar-logo {
-    color: #fff;
+    color: #ffff;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+    font-weight: 700;
   }
   
-  .fa-firstdraft {
+  /* .fa-firstdraft {
     margin-left: 0.5rem;
     font-size: 1.6rem;
-  }
+  } */
   
   .nav-menu {
     display: grid;
@@ -29,7 +30,7 @@
     text-align: center;
     width: 70vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
   
   .nav-item {
@@ -39,19 +40,21 @@
   }
   
   .nav-links {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+    color: #ffffff;
+    text-decoration:none;
+    margin-left:  1.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
   }
   
   .nav-links:hover {
-    background-color: #1888ff;
-    border-radius: 4px;
+    color: #ededed;
+    border-bottom: 2px solid #ededed;
     transition: all 0.2s ease-out;
   }
   
   .fa-bars {
-    color: #fff;
+    color: #ffffff;
   }
   
   .nav-links-mobile {
@@ -59,7 +62,7 @@
   }
   
   .menu-icon {
-    display: none;
+    display:none;
   }
   
   /* REvisar el error cuando disminuye se pierden botones de las descripciones  */
@@ -118,7 +121,7 @@
     }
   
     .fa-times {
-      color: #fff;
+      color: #ffffff;
       font-size: 2rem;
     }
  
