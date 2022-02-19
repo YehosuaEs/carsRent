@@ -26,7 +26,7 @@ function NavBarHome () {
                                    
                     <li className='nav-item'>
                         <Link to="/login" className='nav-links' onClick={closeMobileMenu}>
-                            BOOK YOU CAR 
+                            BOOK YOUR CAR 
                         </Link>
                     </li>
                
@@ -37,13 +37,13 @@ function NavBarHome () {
                     </li>
 
                     <li className='nav-item'>
-                        <Link to="/signup" className='nav-links-mobile' onClick={closeMobileMenu}>
-                            SIGN UP
+                        <Link to="/login" className='nav-links-mobileLogin' onClick={closeMobileMenu}>
+                            LOGIN 
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/login" className='nav-links-mobile' onClick={closeMobileMenu}>
-                            LOGIN
+                        <Link to="/signup" className='nav-links-mobileSignup' onClick={closeMobileMenu}>
+                            SIGN UP
                         </Link>
                     </li>
                 </ul>
@@ -55,3 +55,4 @@ function NavBarHome () {
 };
 
 export default NavBarHome;
+

@@ -2,7 +2,40 @@
     --primary: #1888ff;
 }
  
+
 .btnLogin {
+    background-color: #ffffff;
+    color: #FF8269;
+    cursor: pointer; 
+    border: none;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 1.5em;
+    margin-left: 1em;
+    width: 8em;
+    border-radius: 1rem;
+   }
+   
+   .btnLogin:hover:not(:disabled) {
+    background: #ffffffec;
+    color: #FF8269;
+    border: 1px solid transparent;
+    border-top: none;
+    border-bottom: none;
+    transition: 0.2s;
+    transform: translateY(-1px);
+   }
+  
+
+   .btnLogin:active:not(:disabled) {
+    background-color: #ffffff;
+        color:#ff8269;
+        transform: translateY(0.5px);
+   }
+   
+   
+.btnSign {
     background-color: transparent;
     border: 1px solid #ffffff;
     padding: 0.5rem;
@@ -13,34 +46,18 @@
     border-radius: 1rem;
     color: #ffffff;
     cursor: pointer; 
+    text-decoration: none;
 
    }
   
-   .btnLogin:hover:not(:disabled) {
-    color: #FF8269;
-    background-color: white;
-   }
-
-.btnSign {
-    background-color: #ffffff;
-    border: none;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-right: 1.5em;
-    margin-left: 1em;
-    width: 8em;
-    border-radius: 1rem;
-    color: #FF8269;
-    cursor: pointer; 
-   }
-   
-   
    .btnSign:hover:not(:disabled) {
-    background: transparent;
-    border: 1px solid #ffffff;
-    color: white;
+        background: #FF8269;
+        color: #ffffffe0;
+        transition: 0.2s;
+        transform: translateY(-1px);
    }
-  
-   
-   
+
+   .btnSign:active:not(:disabled) {
+    color: #ffffff;
+    background-color: #FF8269;
+   }
