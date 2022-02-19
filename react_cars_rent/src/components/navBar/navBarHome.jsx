@@ -1,19 +1,19 @@
 import { Fragment, useState } from 'react';
 import {useNavigate, Link } from "react-router-dom"
 import { DropDown } from "./dropDown"
-import "./navBarHome.css"
+import BtnSignUp from './buttonSigUp';
+import BtnLogin from './buttonLogin';
+import "./navBar.css"
 
 
 
-function NavBar () {
+
+function NavBarHome () {
     const [click, setClick] = useState(false);
-
-    const  handleClick = () => setClick(!click);
-
-    const closeMobileMenu = () => setClick(false);
-
     const[dropDown, setDropDown] = useState(false);
 
+    const  handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
 
 /* -------- login y signup botons ------- */
     const navigate = useNavigate();
@@ -62,10 +62,10 @@ function NavBar () {
                             SIGN UP
                         </Link>
                     </li>
-               
                 </ul>
-
-                
+                    <BtnSignUp />
+                    <BtnLogin />
+                                   
             </nav>
             
 
@@ -85,4 +85,4 @@ function NavBar () {
     )
 };
 
-export default NavBar;
+export default NavBarHome;

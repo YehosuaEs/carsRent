@@ -1,5 +1,7 @@
 import  { Fragment, useState } from "react";
 import {Container, Boton} from "./aPagesStyles"
+import NavBar from "../navBar/navBar";
+import NavBarHome from "../navBar/navBarHome";
 //import ModalLogin from "../loginSignIp/loginModal";
 //import ModalSignUp from "../loginSignIp/signUpModal"; 
 //import { useAuth } from "../context/authContext"
@@ -22,6 +24,9 @@ function Home () {
 
     return(
         <Fragment>
+                <NavBarHome />
+                <hr />
+                <NavBar />
                 <Container>
                     Home
                 </Container>

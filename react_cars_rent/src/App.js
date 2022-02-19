@@ -24,7 +24,7 @@ function App() {
     <Fragment>
 
         <Router>
-            <NavBar />
+         
             <Routes>
 
               <Route path="/" element={  <Home /> } />
