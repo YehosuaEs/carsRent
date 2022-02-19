@@ -26,7 +26,6 @@ function Home () {
         <Fragment>
                 <NavBarHome />
                 <hr />
-                <NavBar />
                 <Container>
                     Home
                 </Container>

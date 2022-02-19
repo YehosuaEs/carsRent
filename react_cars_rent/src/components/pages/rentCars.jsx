@@ -3,13 +3,14 @@ import { Container } from "./aPagesStyles";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../context/authContext";
 import CarCard from "../CardsRent/cardsRent";
+import NavBar from "../navBar/navBar";
 
 
 function RentaCars ()  {
     const navigate = useNavigate();
     const {usuario, logout, loading } = useAuth();
     
-    const  handleLogout = async (e) => {
+    /* const  handleLogout = async (e) => {
         e.preventDefault();
         try {
             await logout();   
@@ -19,17 +20,19 @@ function RentaCars ()  {
             console.log("Failed Logout" + error.message)
 
         }
-    }  
+    }   */
        if (loading) { <h1>LOADING...</h1>}
 
     return (
         <Fragment>
+             <NavBar /> 
+
             <Container estilo={"Renta"}>
                 {usuario != null  && 
                     <> 
                         <p>Welcome { usuario.displayName ||usuario.email }</p>  
                      
-                        <button onClick={handleLogout}> Log out </button> 
+                       {/*  <button onClick={handleLogout}> Log out </button>  */}
                     </>
                 }
 
