@@ -6,8 +6,8 @@ import CarsHome from "../../img/CarsHome.png"
 import styledComponents from "styled-components";
 
 export const Imagen = styledComponents.img`
-    width: 900px;
-    height: 300px;
+    width: 50%;
+    height: 50%;
 `;
 
 function Home () {
@@ -18,8 +18,8 @@ function Home () {
                 <NavBarHome />
             {/* -------------- CONTAINER RESTANTE --------- */}
                 <Container>
-                {/* <h3>home </h3>   */}
-                <Imagen src={CarsHome}></Imagen>
+                     {/* <h3>home </h3>   */}
+                    <Imagen src={CarsHome}></Imagen>
                 </Container>
 
                 <Container estilo={"Renta"} >

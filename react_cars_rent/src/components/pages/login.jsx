@@ -1,8 +1,9 @@
 import { Fragment, useState } from 'react';
-import {FormBody, InputLogin, Error } from "./aLoginSignStyles"
+import {Cuerpo, Back, BodyForm, InputLogIn, TextoLogIn, Errorr, DivInputLogin } from "../loginSignIp/loginStyle"
 import { useNavigate,  Link} from "react-router-dom"
 import {useAuth} from "../context/authContext"
 import { useForm } from "react-hook-form";
+import BtnGoogleLogin  from "../loginSignIp/botonLoginGoogle"
 
 function Login () {
     const navigate = useNavigate();
@@ -27,62 +28,67 @@ function Login () {
             }
     };
 
-    const handleGoogleLogin = async (e) => {
-         e.preventDefault()
-         try {
-            await loginWithGoogle()
-            navigate("/renta")
-         } catch (error) {
-             console.log(error.message)
-         }
-
-    }
     return (
         <Fragment>
-            <FormBody onSubmit={handleSubmit(onSubmit)}>
-                <h2> RentCar Login </h2>
-                <label htmlFor="email">Enter your email </label>
-                {errorEmail && <Error>{errorEmail}</Error>}
-                <InputLogin
-                    type="email" 
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    {...register('email', {
-                        required: true,
-                        pattern: {
-                          value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                        },
-                    })}
-                /> 
-                <label htmlFor="password">Password </label>
-                {errorPassW && <Error>{errorPassW}</Error>}
-                <InputLogin 
-                    type="password"  
-                    name= "password"
-                    id="password"
-                    placeholder="Enter your password"
-                    {...register('password', { 
-                        required: true, minLength: {
-                            value: 6,
-                        }, 
-                    })}
-                />
-                <p>forgot your password?</p>
-                <div>
-                    <InputLogin
-                        type="submit" value="Login" estilo={"BtnSignIn"} />
-                </div>
-                
-                <p estilo={"NewAccount"}>Don't have an account? 
-                    {/* <a href="#" onClick={() => setActive("signup")} >Signup </a> */}
-                    <Link to="/signup" > Signup </Link>
-                </p>
-                <p> or Login using Google</p>
-                <button onClick={handleGoogleLogin}>GOOGLE</button>
-
-                
-            </FormBody>
+            <Cuerpo>
+                <Back>
+                    <TextoLogIn estilo={"Back"}> 
+                        <i className="fa fa-arrow-left" aria-hidden="true">&nbsp;</i>
+                        <Link to="/" style={{textDecoration:'none', color: '#ffffff', fontWeight:'700'}}>  
+                            Go Back
+                        </Link>  
+                    </TextoLogIn>
+                </Back>
+                <BodyForm onSubmit={handleSubmit(onSubmit)}>
+                    <TextoLogIn estilo={"Titulo"}> RentCar  </TextoLogIn>
+                    <TextoLogIn estilo={"Subtitulo"}> Login </TextoLogIn>
+                    <br />
+                    <label htmlFor="email">Enter your email </label>
+                    {errorEmail && <Errorr>{errorEmail}</Errorr>}
+                    <InputLogIn
+                        type="email" 
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        {...register('email', {
+                            required: true,
+                            pattern: {
+                            value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                            },
+                        })}
+                    /> 
+                    <label htmlFor="password">Password </label>
+                    {errorPassW && <Errorr>{errorPassW}</Errorr>}
+                    <InputLogIn 
+                        estilo="Password"
+                        type="password"  
+                        name= "password"
+                        id="password"
+                        placeholder="Enter your password"
+                        {...register('password', { 
+                            required: true, minLength: {
+                                value: 6,
+                            }, 
+                        })}
+                    />
+                    <TextoLogIn>forgot your password?</TextoLogIn>
+                    <DivInputLogin>
+                        <InputLogIn
+                            type="submit" value="Login" estilo={"BtnSignIn"} />
+                    </DivInputLogin>
+                    
+                    <TextoLogIn estilo={"NewAccount"}>Don't have an account? &nbsp;
+                        <Link to="/signup" style={{ color: '#ececec'}}>  Signup </Link>
+                    </TextoLogIn>
+                    <br />
+                    <hr />
+                    <br />
+                    <TextoLogIn> Login using Google</TextoLogIn> 
+                   
+                    <BtnGoogleLogin />
+                   
+                </BodyForm>
+            </Cuerpo>
 
         </Fragment>    
     )

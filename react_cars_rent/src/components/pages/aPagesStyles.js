@@ -3,7 +3,7 @@ import styledComponents from "styled-components";
 
 export const Container = styledComponents.div`
     background-color: #FF8269; 
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
