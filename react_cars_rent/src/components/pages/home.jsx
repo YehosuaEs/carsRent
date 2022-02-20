@@ -1,7 +1,6 @@
-import  { Fragment } from "react";
-import {Container, Boton} from "./aPagesStyles";
+import { Fragment } from "react";
+import { Container } from "./aPagesStyles";
 import NavBarHome from "../navBar/navBarHome";
-import {useNavigate} from "react-router-dom";
 import BtnBookCar from "../loginSignIp/BotonBookHome";
 import CarsHome from "../../img/CarsHome.png"
 import styledComponents from "styled-components";

@@ -8,35 +8,38 @@ export const Container= styledComponents.div`
     margin: 8px;
     
 `;
+
 export const Card = styledComponents.div`
    
-    background-color: #e8e8e8; 
+    background-color: #ffffffe0; 
     font-family: Avenir;
     font-weight: 300;
     font-size: 20px;
     box-sizing: border-box;
     margin: 10px;
     height: auto;
-    min-width: calc(50% - 20px); 
+    min-width: calc(50% - 20px);  
     border-radius: 5px;
-   /*  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px; */
-   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 
-    /* resolver el tamaño cuando llegue a 629 en pantalla de ancho */
-    
+    /* resolver el tamaño cuando llegue a "x" en pantalla de ancho */
+    @media (max-width: 960px) {
+     width:100%;    
+    }
+
 `;
 
 export const ImgCar = styledComponents.img`
-padding-right: 20px;
+    padding-right: 20px;
     width: 200px; 
     max-width: 100%;
     height: auto;
-    
-`;
+        
+        &:hover{
+            transform: translateX(1px);  
+        }
+    `;
 
 export const CardSectionA =styledComponents.div`
-
-
 
     ${props => props.estilo === 'CardSectionA_1' && `
         display: flex;
@@ -89,11 +92,11 @@ export const Texto = styledComponents.p`
 `;
 
 export const CardDescription = styledComponents.div`
-    border: 0px solid #252626;
-    background-color: #f5f7fa;
+    background-color: transparent;
     resize: initial;
     width: 95%;
     display:  ${props => props.display}
+
 `;
 
 
@@ -102,19 +105,23 @@ export const Botones = styledComponents.button`
 
     ${props => props.estilo === 'BotonBook' && `
         border: none;
-        color: #090909;
+        color: #2A2931;
         padding: 0.7em 1em;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 500;
-        border-radius: 0.5em;
-        background: #e8e8e8;
-        border: 1px solid #e8e8e8;
+        width: 10em;
+        border-radius: 3em;
+        background: #ffffffe0;
+        border: 1px solid #2A2931;
         transition: all .8s;
-        box-shadow: 6px 6px 12px #c5c5c5,
-                    -6px -6px 12px #ffffff;
+        box-shadow: 1px 1px 2px #cecece,
+                    -4px -4px 10px #ffffff;
 
         &:hover {
-         
+            color: #2A2931;
+            background-color: #ffffffe0;
+            transition: 0.2s;
+            transform: translateY(-3px);
         }
 
         &:disabled {
@@ -123,26 +130,32 @@ export const Botones = styledComponents.button`
 
         &:active {
             color: #666;
-            box-shadow: inset 4px 4px 12px #c5c5c5,
+            box-shadow: inset 4px 4px 12px #ffffff,
             inset -4px -4px 12px #ffffff;
+            transform: translateY(0px);
           }
     `}
 
     ${props => props.estilo === "BotonDetails" &&`
         border: none;
-        color: #090909;
-        padding: 0.3em 1.7em;
+        color: #2A2931;
+        width: auto;
         font-size: 16px;
-        border-radius: 0.5em;
-        background: #e8e8e8;
-        border: 2px solid #e8e8e8;
+        background: #ffffff;
+       
         transition: all .3s;
-        box-shadow: 4px 4px 10px #c5c5c5,
-                    -4px -4px 10px #ffffff;
-
+      
+                
+            &:hover {
+                transition: 0.5s;
+                transition: translateY(-10px) ;
+                border-bottom: 1px solid #2A2931;
+            }
+            
             &:disabled {
                 pointer-events: none;
-                }
+                
+            }
     
             &:active {
                 color: #666;

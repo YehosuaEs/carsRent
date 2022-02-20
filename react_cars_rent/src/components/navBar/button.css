@@ -2,7 +2,7 @@
     --primary: #1888ff;
 }
  
-
+/* --------Login------------------------------------------------ */
 .btnLogin {
     background-color: #ffffff;
     color: #FF8269;
@@ -29,12 +29,12 @@
   
 
    .btnLogin:active:not(:disabled) {
-    background-color: #ffffff;
+        background-color: #ffffff;
         color:#ff8269;
         transform: translateY(0.5px);
    }
    
-   
+/* --------Signup------------------------------------------------ */
 .btnSign {
     background-color: transparent;
     border: 1px solid #ffffff;
@@ -60,4 +60,34 @@
    .btnSign:active:not(:disabled) {
     color: #ffffff;
     background-color: #FF8269;
+    transform: translateY(0.5px);
+   }
+
+/* --------Logout------------------------------------------------ */
+.btnLogout {
+    background-color: #2A2931;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-right: 1em;
+    width: 8em;
+    border-radius: 3rem;
+    color: #ffffff;
+    cursor: pointer; 
+    text-decoration: none;
+    letter-spacing: 1px;
+
+   }
+  
+   .btnLogout:hover:not(:disabled) {
+        background: #2A2931;
+        color: #ffffffe0;
+        transition: 0.2s;
+        transform: translateY(-1px);
+   }
+
+   .btnLogout:active:not(:disabled) {
+    color: #ffffff;
+    background-color: #2a2931eb;
+    transform: translateY(0.5px);
    }

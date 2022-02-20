@@ -1,6 +1,6 @@
 import styledComponents from "styled-components";
 
-/* background-color: #fffffc;  */
+
 export const Container = styledComponents.div`
     background-color: #FF8269; 
     width: 100%;
@@ -34,7 +34,42 @@ export const Container = styledComponents.div`
     Justify-content: center;
     padding: 50px;
     `}
+
 `;
+
+/* ---------------------------------- RenCar Page ---------------------------------- */
+export const ContainerRent = styledComponents.div`
+    background-color: #ececec; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Avenir;
+    height: auto;
+    text-align: center;
+    
+    ${props => props.estilo ==='Profile' &&`
+    align-items: flex-end;
+    margin-right:30px;
+    font-size: 1rem;
+    `}
+
+    ${props =>props.estilo=== 'Head' &&`
+    
+    `}
+
+    ${props => props.estilo === 'RentaCars' && `
+    height: auto;
+    max-width: 100vw;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    `}
+`;
+
 
 export const Boton = styledComponents.button`
      background-color: #dddddd;

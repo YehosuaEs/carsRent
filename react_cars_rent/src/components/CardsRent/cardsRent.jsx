@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/firebaseconfig";
 import ModalBooking from "./modalBookCar";
 import BotonDescription from "./botonDescription";
+import avanza from "../../img/avanza.png"
 
 
 function CarCard () {
@@ -39,7 +40,7 @@ function CarCard () {
                         <Card key={id} >
                             <CardSectionA  >
                                 <CardSectionA estilo={"CardSectionA_1"}>
-                                    <ImgCar  /* src={items.img} */></ImgCar>
+                                    <ImgCar   src={avanza} ></ImgCar>
                                     <Botones  onClick={() =>{ handleOpenModal()}} estilo={"BotonBook"}  >Book vehicle</Botones>
                                     { showModal ? <ModalBooking cars={setCarInfo} showModal={showModal} setShowModal={setShowModal} /> : null}
                                 </CardSectionA>

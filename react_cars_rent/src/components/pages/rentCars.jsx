@@ -1,47 +1,33 @@
-import { Fragment, useState } from "react";
-import { Container } from "./aPagesStyles";
-import {useNavigate} from "react-router-dom";
+import { Fragment } from "react";
+import { ContainerRent } from "./aPagesStyles";
 import {useAuth} from "../context/authContext";
 import CarCard from "../CardsRent/cardsRent";
 import NavBar from "../navBar/navBar";
 
 
 function RentaCars ()  {
-    const navigate = useNavigate();
-    const {usuario, logout, loading } = useAuth();
+    const {usuario, loading } = useAuth();
     
-    /* const  handleLogout = async (e) => {
-        e.preventDefault();
-        try {
-            await logout();   
-            navigate ("/");
-            alert("el usuario ha salido " + usuario.email)
-        } catch (error) {
-            console.log("Failed Logout" + error.message)
-
-        }
-    }   */
        if (loading) { <h1>LOADING...</h1>}
 
     return (
         <Fragment>
              <NavBar /> 
+             <ContainerRent>
 
-            <Container estilo={"Renta"}>
-                {usuario != null  && 
-                    <> 
-                        <p>Welcome { usuario.displayName ||usuario.email }</p>  
-                     
-                       {/*  <button onClick={handleLogout}> Log out </button>  */}
-                    </>
-                }
+                <ContainerRent estilo={"Profile"}>
+                    {usuario != null  && <p>Welcome  | { usuario.displayName ||usuario.email }</p> }
+                </ContainerRent>
 
-                <h1>Rent Cars  </h1>          
-                <CarCard />
+                <ContainerRent estilo={"Head"}>
+                    <h3> Choose your car preference and  book it! </h3>          
+                </ContainerRent>
 
-               
-                    
-            </Container>
+                <ContainerRent estilo={"RentaCars"}>
+                    <CarCard />
+                </ContainerRent>
+
+             </ContainerRent>
         </Fragment>
     )
 };

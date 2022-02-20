@@ -2,12 +2,11 @@ import { Fragment, useState } from 'react';
 import { Link } from "react-router-dom"
 import BtnSignUp from './buttonSigUp';
 import BtnLogin from './buttonLogin';
-import "./navBar.css"
+import "./navBarHome.css"
 
 function NavBarHome () {
     const [click, setClick] = useState(false);
-
-    const  handleClick = () => setClick(!click);
+    const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
 

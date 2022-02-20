@@ -1,8 +1,8 @@
 import "./button.css"
+import { Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from '../context/authContext';
 
-import { Fragment } from "react";
 
 function BtnLogout () {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ function BtnLogout () {
         try {
             await logout();   
             navigate ("/");
-            alert("el usuario ha salido " + usuario.email)
+            console.log("el usuario ha salido " + usuario.email)
         } catch (error) {
             console.log("Failed Logout" + error.message)
 
@@ -22,7 +22,7 @@ function BtnLogout () {
     return(
         <Fragment>
             <Link to="/ ">
-                <button  onClick={handleLogout} className="btn">Logout</button> 
+                <button  onClick={handleLogout} className="btnLogout">Logout</button> 
             </Link>
         </Fragment>
     )
