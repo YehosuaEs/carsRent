@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect} from "react";
-import data from "../../dataCars/data"
+//import data from "../../dataCars/data"
 import {Container, Card, Botones, ImgCar, Texto, CardSectionA, CardSectionB} from "./carsRentStyles"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/firebaseconfig";

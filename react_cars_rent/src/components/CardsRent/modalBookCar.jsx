@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Overlay, ModalContent, CloseModal, Inputs, FormBody, Error} from "./modalBookCarStyles";
+import { Overlay, ModalContent, CloseModal, Inputs, FormBody, ErrorModal} from "./modalBookCarStyles";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
@@ -35,23 +35,29 @@ const ModalBooking =  ({showModal, setShowModal, cars}) => {
                     <ModalContent>
                         <FormBody onSubmit={handleSubmit(onSubmit)}>
                             
-                            <h2> BOOK YOUR CAR </h2>
-                         {/*   <p>{ cars.name }</p>  */}
+                            <h3> BOOK YOUR CAR </h3>
+                            {/* <p>{ cars.name }</p>  */}
                             <label htmlFor={"date"} >Choose a date</label>
-                            {errors.date && <Error >{errors.date.message}</Error>}
-                            <Inputs type={"date"} id={"date"} min={defaultValue}  defaultValue={""}
+                            {errors.date && <ErrorModal >{errors.date.message}</ErrorModal>}
+                            <Inputs type={"date"} 
+                                id={"date"} 
+                                min={defaultValue}  
+                                defaultValue={""}
                                 {...register('date', {required: 'Please select a date'})} 
                             />
 
                             <label htmlFor={"time"} >Choose an hour to get it!</label>
-                            {errors.time && <Error >{errors.time.message}</Error>}
-                            <Inputs type={"time"} id={"time"}   min="07:00" max="24:00"
+                            {errors.time && <ErrorModal >{errors.time.message}</ErrorModal>}
+                            <Inputs type={"time"} 
+                                id={"time"}   
+                                min="07:00" 
+                                max="24:00"
                                 {...register('time', {required: 'Please select an hour'})}
                             /> 
-                            <Inputs type="submit"  value="Booking"  estilo={"BtnSignIn"} />
+                            <Inputs type="submit"  value="Booking"  estilo={"Booking"} />
 
                             <CloseModal  onClick={() => setShowModal (prev => !prev)}>
-                                close
+                            <i className="fa fa-times" aria-hidden="true"></i>
                             </CloseModal>
                         </FormBody>
                     </ModalContent>  

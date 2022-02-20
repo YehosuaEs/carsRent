@@ -18,14 +18,14 @@ function Home () {
                 <NavBarHome />
             {/* -------------- CONTAINER RESTANTE --------- */}
                 <Container>
-                     {/* <h3>home </h3>   */}
                     <Imagen src={CarsHome}></Imagen>
                 </Container>
 
                 <Container estilo={"Renta"} >
                     <h3>Rent Cars </h3>   
                    
-                    <h5>CAR SHARING EN RIVIERA MAYA ALQUILER DE COCHES POR DÍAS PARA DISFRUTAR DE TUS VACACIONES</h5> 
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+                    <h5> Donec eu elit tortor. Nunc tempus viverra sollicitudin. Donec feugiat mauris id ligula interdum, non sagittis ligula pretium.</h5> 
                     <BtnBookCar />
                 </Container>
                

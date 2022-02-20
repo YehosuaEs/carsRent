@@ -6,7 +6,7 @@ export const BotonBook = styledComponents.button`
     background-color: #ffffff;
     border: 2px solid #ffffff;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
     font-size: 1rem;
     font-weight: 600;
     width: 15em;
