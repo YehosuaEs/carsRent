@@ -1,6 +1,6 @@
 import styledComponents from "styled-components";
 
-export const Cuerpo = styledComponents.div`
+export const CuerpoSignup = styledComponents.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,17 +11,17 @@ export const Cuerpo = styledComponents.div`
     color:#ffffff
     
 `
-export const Back = styledComponents.div`
-    margin-bottom: 1rem;  
+export const BackSignup = styledComponents.div`
+    margin: 2rem 0 1rem 0;  
 `;
 
-export const BodyForm = styledComponents.form`
+export const BodyFormSignup = styledComponents.form`
     align-items: center;
     Justify-content: center;
     width: 30%;
     background: #3574B7;
+    margin-bottom: 3rem;
     padding: 1.5rem 2.5rem 1.5rem 2.5rem;
-
     border-radius: 1rem;
     font-weight: 500;
    
@@ -46,7 +46,7 @@ export const BodyForm = styledComponents.form`
     }
 `;
 
-export const InputLogIn = styledComponents.input`
+export const InputSignup = styledComponents.input`
     display: flex;
     flex-direction: row;
     Justify-content: center;
@@ -62,11 +62,11 @@ export const InputLogIn = styledComponents.input`
         font-size: 13px;
     }
 
-    ${props => props.estilo === 'BtnSignIn' && `
+    ${props => props.estilo === 'BtnSignup' && `
         cursor: pointer;   
         color: #ffffff;
         width: 65%;
-        margin: 2rem 0 2rem 0;
+        margin: .4rem 0 1.8rem 0;
         padding: 0.5rem 0 0.5rem 0;
         border: none;
         font-size: 1rem;
@@ -92,18 +92,18 @@ export const InputLogIn = styledComponents.input`
 `;
 
 
-export const DivInputLogin = styledComponents.div`
+export const DivInputSignup = styledComponents.div`
     display: flex;
     justify-content: center;
 `;
 
-export const Errorr = styledComponents.p`
+export const ErrorSignup = styledComponents.p`
     color: #FEEB49;
     margin-block:0; 
     font-size: .8rem;
 `;
 
-export const TextoLogIn = styledComponents.p`
+export const TextoSignup = styledComponents.p`
     font-size: 12px;
     text-align: center;
 
@@ -126,12 +126,6 @@ export const TextoLogIn = styledComponents.p`
         }
     `}
 
-    ${props => props.estilo=== 'forgotPassLogin' && `
-        text-align: right;
-        margin-right: 2px;
-        font-size: 11px;
-    `}
-
     ${props => props.estilo === 'Google' && `
         Font-size: .8rem;
         text-decoration: none;
@@ -143,12 +137,12 @@ export const TextoLogIn = styledComponents.p`
     `}
 `;
 
-export const ImgGoogle = styledComponents.img`
+export const ImgGoogleSignup = styledComponents.img`
     width: 15%;
     height: 15%; 
 `;
 
-export const DivGoogle =styledComponents.div`
+export const DivGoogleSignup =styledComponents.div`
     display: flex;
     flex-direction: column;
     align-items: center;

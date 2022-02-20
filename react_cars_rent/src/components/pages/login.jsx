@@ -71,7 +71,7 @@ function Login () {
                             }, 
                         })}
                     />
-                    <TextoLogIn>forgot your password?</TextoLogIn>
+                    <TextoLogIn estilo={"forgotPassLogin"}>forgot your password?</TextoLogIn>
                     <DivInputLogin>
                         <InputLogIn
                             type="submit" value="Login" estilo={"BtnSignIn"} />

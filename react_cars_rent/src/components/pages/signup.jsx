@@ -1,13 +1,8 @@
 import { Fragment, useState} from "react";
-/* ------ */
-import {FormBody, InputLogin, Error } from "./aLoginSignStyles"
-/* ------ */
 import {useNavigate, Link} from "react-router-dom"
 import {useAuth} from "../context/authContext"
 import { useForm } from "react-hook-form";
-/* OJOJJOJOJ */
-import { Cuerpo, Back, TextoLogIn, BodyForm, DivInputLogin } from "../loginSignIp/loginStyle";
-/* OJOJJOJOJ */
+import { CuerpoSignup, BackSignup, TextoSignup, BodyFormSignup, ErrorSignup, InputSignup, DivInputSignup } from "../loginSignIp/signupStyle";
 import BtnGoogleLogin from "../loginSignIp/botonLoginGoogle";
 
 function Signup () {
@@ -40,25 +35,25 @@ function Signup () {
       
     return(
         <Fragment>
-            <Cuerpo estilo={"Signup"}>
-                 <Back>
-                    <TextoLogIn estilo={"Back"}> 
+            <CuerpoSignup estilo={"Signup"}>
+                 <BackSignup>
+                    <TextoSignup estilo={"Back"}> 
                         <i className="fa fa-arrow-left" aria-hidden="true">&nbsp;</i>
                         <Link to="/" style={{textDecoration:'none', color: '#ffffff', fontWeight:'700'}}>  
                             Go Back 
                         </Link>  
-                    </TextoLogIn>
-                </Back>
+                    </TextoSignup>
+                </BackSignup>
 
-                <BodyForm  onSubmit={handleSubmit(onSubmit)} >
+                <BodyFormSignup  onSubmit={handleSubmit(onSubmit)} >
             
-                <TextoLogIn estilo={"Titulo"}> RentCar  </TextoLogIn>
-                    <TextoLogIn estilo={"Subtitulo"}> Signup </TextoLogIn>
+                <TextoSignup estilo={"Titulo"}> RentCar  </TextoSignup>
+                    <TextoSignup estilo={"Subtitulo"}> Signup </TextoSignup>
                     <br />
                     <label htmlFor="email">Enter your email </label>
-                    {errors.email && <Error >{errors.email.message}</Error>}
-                    <Error>{errorEmail}</Error>
-                    <InputLogin
+                    {errors.email && <ErrorSignup >{errors.email.message}</ErrorSignup>}
+                    <ErrorSignup>{errorEmail}</ErrorSignup>
+                    <InputSignup
                         type="email" 
                         name="email"
                         id="email"
@@ -72,8 +67,8 @@ function Signup () {
                         })}
                     /> 
                     <label htmlFor="password">Password </label>
-                    {errors.password && <Error>{errors.password.message}</Error>}
-                    <InputLogin 
+                    {errors.password && <ErrorSignup>{errors.password.message}</ErrorSignup>}
+                    <InputSignup 
                         type="password"  
                         name= "password"
                         id="password"
@@ -86,8 +81,8 @@ function Signup () {
                         })}
                     /> 
                     <label htmlFor="confirmpassword">Confirm password:</label>
-                    <Error>{errorPassW}</Error> {errors.confirmpassword && <Error>{errors.confirmpassword.message}</Error>}
-                    <InputLogin 
+                    <ErrorSignup>{errorPassW}</ErrorSignup> {errors.confirmpassword && <ErrorSignup>{errors.confirmpassword.message}</ErrorSignup>}
+                    <InputSignup 
                         type="password"  
                         name= "confirmpassword"
                         id="confirmpassword"
@@ -99,20 +94,21 @@ function Signup () {
                             }, 
                     })}
                     /> 
-                    
-                     <DivInputLogin>
-                        <InputLogin
-                            type="submit" value="Sign Up" estilo={"BtnSignIn"} />
-                      </DivInputLogin>
+                    <DivInputSignup>
+                        <InputSignup
+                            type="submit" value="Sign Up" estilo={"BtnSignup"} />
+                    </DivInputSignup>
                    
-                    <TextoLogIn estilo={"NewAccount"}>Already have an account? &nbsp;
+                    <TextoSignup estilo={"NewAccount"}>Already have an account? &nbsp;
                         <Link to="/login" style={{ color: '#ececec'}}> Login </Link>
-                    </TextoLogIn>
-                    
-                    <TextoLogIn>  Signup using Google</TextoLogIn> 
+                    </TextoSignup>
+                    <br />
+                    <hr />
+                    <br />                    
+                    <TextoSignup>  Signup using Google</TextoSignup> 
                     <BtnGoogleLogin />
-                </BodyForm>
-            </Cuerpo>
+                </BodyFormSignup>
+            </CuerpoSignup>
         </Fragment>
     )
 };
