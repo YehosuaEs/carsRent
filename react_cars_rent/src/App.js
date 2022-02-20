@@ -7,38 +7,23 @@ import Signup from "./components/pages/signup"
 import RentaCars from  "./components/pages/rentCars"
 import Contact from "./components/pages/contact"
 import NotFound from "./components/pages/notFound"
-import NavBar from "./components/navBar/navBar";
-import PrivateRoute from './components/privateRoutes/privateRoute';
-import {useAuth} from "./components/context/authContext"
-
+import Privada from "./components/privateRoutes/rutaPrivada"
 
 function App() {
-/* const {usuario} = useAuth();
-
-{usuario && <>
-  <Route path="/rentaCars" element={ <RentaCars />} />
-  <Route path="/contact" element={  <Contact /> } />
-</>} */
 
   return (
-    <Fragment>
+    <Fragment>    
 
         <Router>
-         
             <Routes>
-
               <Route path="/" element={  <Home /> } />
-
-              <Route  path="/login" element={<Login/> } />
-              
+{/* ------------------------------------------------------------------------------ */}
+              <Route path="/renta" element={ <Privada><RentaCars /> </Privada>} />           
+{/* ------------------------------------------------------------------------------ */}
+              <Route path="/contact" element={  <Contact />  } /> 
               <Route  path="/signup" element={<Signup/> } />
-            
+              <Route  path="/login" element={<Login/> } />
               <Route  path="/*" element={<NotFound />}></Route>
-
-              <Route path="/renta" element={ <PrivateRoute> <RentaCars /> </PrivateRoute>} />
-              
-              <Route path="/contact" element={  <Contact /> } />
-
             </Routes>
         </Router>
 

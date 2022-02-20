@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import BtnSignUp from './buttonSigUp';
 import BtnLogin from './buttonLogin';
 import "./navBarHome.css"
@@ -24,15 +24,15 @@ function NavBarHome () {
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                                    
                     <li className='nav-item'>
-                        <Link to="/login" className='nav-links' onClick={closeMobileMenu}>
+                        <NavLink to="/renta" className='nav-links' onClick={closeMobileMenu}>
                             BOOK YOUR CAR 
-                        </Link>
+                        </NavLink>
                     </li>
                
                     <li className='nav-item'>
-                        <Link to="/contact" className='nav-links' onClick={closeMobileMenu}>
+                        <NavLink to="/contact" className='nav-links' onClick={closeMobileMenu}>
                             CONTACT US
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className='nav-item'>

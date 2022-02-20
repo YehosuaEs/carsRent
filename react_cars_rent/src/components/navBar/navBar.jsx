@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Link, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useAuth } from '../context/authContext';
 import BtnLogout from './buttonLogout';
 import "./navBar.css"
@@ -19,34 +19,33 @@ function NavBar () {
             console.log("el usuario ha salido de un dispositivo de menos de 920vw" + usuario.email)
         } catch (error) {
             console.log("Failed Logout" + error.message)
-
         }
     } 
     /* ----------------------------------- */   
     return(
         <Fragment>
             <nav className='navbar2'>
-                <Link to="/renta" className='navBar2-logo2'>
+                <NavLink to="/renta" className='navBar2-logo2'>
                     RentaCAR  
-                </Link>
+                </NavLink>
                 <div className='menu2-icon2' onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"} />
                 </div>
                 <ul className={click ? 'nav2-menu2 active' : 'nav2-menu2'}>         
                     <li className='nav2-item2'>
-                        <Link to="/renta" className='nav2-links2' onClick={closeMobileMenu}>
+                        <NavLink to="/renta" className='nav2-links2' onClick={closeMobileMenu}>
                            HOME 
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='nav2-item2'>
-                        <Link to="/contact" className='nav2-links2' onClick={closeMobileMenu}>
+                        <NavLink to="/contact" className='nav2-links2' onClick={closeMobileMenu}>
                             CONTACT US
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='nav2-item2'>
-                        <Link to="/" className='nav2-links2-mobileLogout2' onClick={closeMobileMenu}>
+                        <NavLink to="/" className='nav2-links2-mobileLogout2' onClick={closeMobileMenu}>
                             <span onClick={handleLogout}>LOGOUT</span> 
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                     <BtnLogout />              

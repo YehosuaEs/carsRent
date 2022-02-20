@@ -1,22 +1,26 @@
 import { Fragment, useState } from 'react';
 import {Cuerpo, Back, BodyForm, InputLogIn, TextoLogIn, Errorr, DivInputLogin } from "../loginSignIp/loginStyle"
-import { useNavigate,  Link} from "react-router-dom"
-import {useAuth} from "../context/authContext"
+import { useNavigate,  Link, useLocation} from "react-router-dom"
+import { useAuth } from "../context/authContext"
 import { useForm } from "react-hook-form";
 import BtnGoogleLogin  from "../loginSignIp/botonLoginGoogle"
 
 function Login () {
     const navigate = useNavigate();
-    const [errorEmail, setErrorEmail] = useState()
-    const [errorPassW, setErrorPassW] = useState()
-    const {login, loginWithGoogle} = useAuth();
+    const [errorEmail, setErrorEmail] = useState();
+    const [errorPassW, setErrorPassW] = useState();
+    const {login} = useAuth();
     const {register, formState: {errors}, handleSubmit} = useForm();
+
+    /* const location = useLocation(); */
+
 
     async function onSubmit (data, e) {
         e.preventDefault()
             try  {
                 await login(data.email, data.password)
-                navigate("/renta")
+                navigate("/renta") 
+                //navigate({replace: false})
             } catch (error) {
                 if (error.code === "auth/user-not-found") {
                     setErrorEmail("Email not found, please go to signup section to start!")

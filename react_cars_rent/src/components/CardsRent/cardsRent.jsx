@@ -54,7 +54,7 @@ function CarCard () {
                                     </CardSectionA>
                                 </CardSectionA> 
                             </CardSectionA>
-                              <CardSectionB>
+                            <CardSectionB>
                                 <BotonDescription 
                                     asientos={cars.seats}
                                     pasajeros={cars.passengers}

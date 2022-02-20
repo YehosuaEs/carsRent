@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+
 import { auth } from "../../firebase/firebaseconfig";
 import { 
     createUserWithEmailAndPassword, 
@@ -8,6 +9,7 @@ import {
     GoogleAuthProvider, 
     signInWithPopup 
 } from "firebase/auth";
+import { Navigate } from "react-router";
 
 
 export const authContext = createContext();
@@ -22,8 +24,10 @@ export const authContext = createContext();
  } 
 /* ----------------------------------- */
 export function AuthProvider ({ children }) {
+
     const [usuario, setUsuario] = useState();
     const [loading, setLoading] = useState(true);
+    const [isAthenticated, setIsAuthenticated] = useState(false);
 
     const signup = async (email, password) => {
         //console.log(email, password)
@@ -33,11 +37,13 @@ export function AuthProvider ({ children }) {
     }
     const login = async (email, password) => {
         const credentialSignIn = await signInWithEmailAndPassword  (auth, email, password);
-        alert("Bienvenido" + email)
+        console.log("el usuario " + email + " ha hecho login correctamente")
+        setIsAuthenticated(true)
     }
 
     const logout = async () => {
         await signOut(auth)
+        setIsAuthenticated(false)
     }
 
     const loginWithGoogle = async () => {
@@ -53,7 +59,7 @@ export function AuthProvider ({ children }) {
         return unsubscribe;
     },[]) 
     return(
-        <authContext.Provider value={{signup, login, logout, usuario, loading, loginWithGoogle}}>
+        <authContext.Provider value={{signup, login, logout, isAthenticated, usuario, loading, loginWithGoogle}}>
             {children}
         </authContext.Provider>
     )

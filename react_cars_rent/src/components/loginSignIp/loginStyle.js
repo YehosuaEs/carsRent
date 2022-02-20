@@ -21,7 +21,6 @@ export const BodyForm = styledComponents.form`
     width: 30%;
     background: #3574B7;
     padding: 1.5rem 2.5rem 1.5rem 2.5rem;
-
     border-radius: 1rem;
     font-weight: 500;
    
@@ -67,7 +66,7 @@ export const InputLogIn = styledComponents.input`
         color: #ffffff;
         width: 65%;
         margin: 2rem 0 2rem 0;
-        padding: 0.5rem 0 0.5rem 0;
+        padding: 0.5rem 0;
         border: none;
         font-size: 1rem;
         font-weight: 600;

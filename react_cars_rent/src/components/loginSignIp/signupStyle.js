@@ -6,13 +6,14 @@ export const CuerpoSignup = styledComponents.div`
     justify-content: center;
     align-items: center;
     width:100%;
-    min-height: 100vh;
+    height: auto;
+    padding-bottom: 3rem;
     background:#2BB9AC;
     color:#ffffff
     
 `
 export const BackSignup = styledComponents.div`
-    margin: 2rem 0 1rem 0;  
+    margin: 1.6rem 0 1rem 0;  
 `;
 
 export const BodyFormSignup = styledComponents.form`
@@ -20,7 +21,7 @@ export const BodyFormSignup = styledComponents.form`
     Justify-content: center;
     width: 30%;
     background: #3574B7;
-    margin-bottom: 3rem;
+    margin-left: 6px;
     padding: 1.5rem 2.5rem 1.5rem 2.5rem;
     border-radius: 1rem;
     font-weight: 500;
@@ -67,7 +68,7 @@ export const InputSignup = styledComponents.input`
         color: #ffffff;
         width: 65%;
         margin: .4rem 0 1.8rem 0;
-        padding: 0.5rem 0 0.5rem 0;
+        padding: 0.5rem 0;
         border: none;
         font-size: 1rem;
         font-weight: 600;

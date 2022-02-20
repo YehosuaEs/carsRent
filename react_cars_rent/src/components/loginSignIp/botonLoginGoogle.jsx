@@ -20,8 +20,6 @@ function BtnGoogleLogin () {
 
    };
 
-
-
     return(
         <Fragment>
             <Link to="/renta">

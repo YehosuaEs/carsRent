@@ -16,7 +16,9 @@ function RentaCars ()  {
              <ContainerRent>
 
                 <ContainerRent estilo={"Profile"}>
-                    {usuario != null  && <p>Welcome  | { usuario.displayName ||usuario.email }</p> }
+                    { usuario != null  && 
+                        <p>Welcome  | { usuario.displayName ||usuario.email }</p> 
+                    }
                 </ContainerRent>
 
                 <ContainerRent estilo={"Head"}>
