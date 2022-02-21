@@ -6,7 +6,7 @@ import Avanza from "../img/avanza.png"
 const data = [
 
             {
-                id: 0,
+              /*   id: "xmV9aBYHBEZdu88jZ65x",
                 model: "Spark",
                 price: 900,
                 manufacturer: "Chevrolet",
@@ -19,11 +19,11 @@ const data = [
                 limit_speed: "Speed limit",
                 suitcases: "1",
                 transmission: "manual",
-                electric: "no",
+                electric: "no", */
                 img: Spark
             },
             {
-                id: 1,
+             /*    id: "KZmMcQJVSR2OaIiCD3hn",
                 model: "Attitude",
                 price: 900,
                 manufacturer: "Dodge",
@@ -36,11 +36,11 @@ const data = [
                 limit_speed: "Speed limit",
                 suitcases: "1",
                 transmission: "manual",
-                electric: "no",
+                electric: "no", */
                 img: Attitude
             },
             {
-                id: 2,
+               /*  id: "XIciFmzOpgx35FeqlUP3",
                 model: "Fit",
                 price: 900,
                 manufacturer: "Honda",
@@ -53,11 +53,11 @@ const data = [
                 limit_speed: "Speed limit",
                 suitcases: "1",
                 transmission: "manual",
-                electric: "no",
+                electric: "no", */
                 img: Fit
             },
             {
-                id: 3,
+               /*  id: "2VyaYmklKRfE4Z0Eh8eL",
                 model: "Avanza",
                 price: 1050,
                 manufacturer: "Toyota",
@@ -70,7 +70,7 @@ const data = [
                 limit_speed: "Speed limit",
                 suitcases: "1",
                 transmission: "manual",
-                electric: "no",
+                electric: "no", */
                 img: Avanza
             },
        /*      {

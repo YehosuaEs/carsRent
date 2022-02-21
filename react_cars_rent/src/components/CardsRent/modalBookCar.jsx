@@ -36,7 +36,7 @@ const ModalBooking =  ({showModal, setShowModal, cars}) => {
                         <FormBody onSubmit={handleSubmit(onSubmit)}>
                             
                             <h3> BOOK YOUR CAR </h3>
-                            {/* <p>{ cars.name }</p>  */}
+                             <p>{ cars.model }</p>  
                             <label htmlFor={"date"} >Choose a date</label>
                             {errors.date && <ErrorModal >{errors.date.message}</ErrorModal>}
                             <Inputs type={"date"} 

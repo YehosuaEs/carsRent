@@ -6,13 +6,16 @@ import { db } from "../../firebase/firebaseconfig";
 import ModalBooking from "./modalBookCar";
 import BotonDescription from "./botonDescription";
 import avanza from "../../img/avanza.png"
+import data from "../../dataCars/dataMarina"
 
 
 function CarCard () {
     const [cars, setCars] = useState ([]);
     const carsCollectionRef = collection(db, "cars")
 
+
      useEffect(() => {
+        
         const obtenerData = async () => {
             const datos = await getDocs(carsCollectionRef);
             setCars(datos.docs.map((doc) => (
@@ -32,6 +35,10 @@ function CarCard () {
         console.log(carInfo)
      }; 
 
+
+
+
+  
     return (
         <Fragment >
             <Container>
@@ -40,7 +47,7 @@ function CarCard () {
                         <Card key={id} >
                             <CardSectionA  >
                                 <CardSectionA estilo={"CardSectionA_1"}>
-                                    <ImgCar   src={avanza} ></ImgCar>
+                                    <ImgCar   src={data[cars.id]} />
                                     <Botones  onClick={() =>{ handleOpenModal()}} estilo={"BotonBook"}  >Book vehicle</Botones>
                                     { showModal ? <ModalBooking cars={setCarInfo} showModal={showModal} setShowModal={setShowModal} /> : null}
                                 </CardSectionA>

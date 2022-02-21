@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 
 export const Overlay = styledComponents.div`
-    background: #ffc24f;
+    background: #242931;
     opacity: 0.4;
     width: 100vw; 
     height: 100vh;
@@ -31,8 +31,8 @@ export const ModalContent = styledComponents.div`
 export const CloseModal = styledComponents.a`
     cursor: pointer;
     position: absolute;
-    top: 2px;
-    right: .6rem;
+    top: 5px;
+    right: .8rem;
     padding: 5px 7px;
     font-size: 1.5rem;
 
