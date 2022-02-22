@@ -6,7 +6,7 @@ export const CuerpoSignup = styledComponents.div`
     justify-content: center;
     align-items: center;
     width:100%;
-    height: auto;
+    height: 100vh;
     padding-bottom: 3rem;
     background:#2BB9AC;
     color:#ffffff

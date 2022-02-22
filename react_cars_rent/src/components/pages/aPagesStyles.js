@@ -12,17 +12,20 @@ export const Container = styledComponents.div`
     font-size: 28px;
     height: auto;
     text-align: center;
+    padding: 10rem 0 4rem 0;
 
     
     ${props => props.estilo === 'Renta' && `
     background-color: #FFC24F;
-    height: auto;
     max-width: 100vw;
+    min-height: 60vh;
     text-align: center; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-top: 0rem;
+
    
     `}
 
