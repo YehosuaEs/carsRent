@@ -12,6 +12,8 @@ export const DescripLi= styledComponents.div`
     margin: 15px 0 0 5px;
     width: 100%;
     font-size: 16px;
+    font-weight: 400;
+    text-align: left;
 
     ${props => props.estilo == 'descriptionDown' && `
      margin-top: 15px;
@@ -19,9 +21,10 @@ export const DescripLi= styledComponents.div`
 `;
 
 export const FeatAndGuide = styledComponents.p`
-    margin: 30px 0 0 10px;
+    margin: 30px 0 0 20px;
     font-weight: 500;
     font-size: 18px;
+    text-align: left;
 `;
 
 export const LineaDiv = styledComponents.hr`

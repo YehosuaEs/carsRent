@@ -3,6 +3,15 @@ import Attitude from "../img/attitude.png"
 import Fit from "../img/fit.png"
 import Avanza from "../img/avanza.png"
 
+
+const dataImg ={
+    "xmV9aBYHBEZdu88jZ65x": Spark,
+    "KZmMcQJVSR2OaIiCD3hn": Attitude,
+    "XIciFmzOpgx35FeqlUP3": Fit,
+    "2VyaYmklKRfE4Z0Eh8eL": Avanza
+};
+export default dataImg;
+/* ----------------------------------------------------------------------- */
 const data = [
 
             {
@@ -92,4 +101,3 @@ const data = [
             }, */
 ];
 
-export default data;

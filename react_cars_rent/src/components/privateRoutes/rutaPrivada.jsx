@@ -8,7 +8,7 @@ const Privada = ({children}) => {
     //let location = useLocation();
     const {usuario, isAthenticated,loading} = useAuth();
         /* if (loading) { <h1>LOADING</h1>  } */
-        if (!isAthenticated && usuario == null  ) {
+        if (!isAthenticated /* && usuario == null  */ ) {
             return <Navigate  to="/login" /* state={{ location }} */ /* replace */ />             
         }
     return children

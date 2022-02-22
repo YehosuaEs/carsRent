@@ -20,6 +20,7 @@ function BotonDescription(props) {
         <Fragment>
             <Botones estilo={"BotonDetails"} type="button" onClick={handleclickDetails}>Details </Botones>
             <CardDescription display={pressDescripcion ? 'block' : 'none'}>
+                {/* ----------------------------------------------------- */}
                 <FeatAndGuide>Characteristics</FeatAndGuide>
                 <LineaDiv/>
                 <DescripUl>
@@ -38,10 +39,13 @@ function BotonDescription(props) {
                     <DescripLi estilo={'descriptionDown'}> {props.transmision}</DescripLi>
                     <DescripLi estilo={'descriptionDown'}> </DescripLi>
                 </DescripUl> 
+                {/* ----------------------------------------------------- */}
                 <FeatAndGuide>Features</FeatAndGuide>
                 <LineaDiv/>
+                {/* ----------------------------------------------------- */}
                 <FeatAndGuide>Guidelines</FeatAndGuide>
                 <LineaDiv />
+                <DescripLi> {props.guidelines}</DescripLi>
                 <br />
 
             </CardDescription> 
